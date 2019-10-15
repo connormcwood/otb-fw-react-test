@@ -1,0 +1,11 @@
+@import "./colour";
+
+.filters__content {
+    background-color: #FFF;
+    max-width: 240px;
+    .filter {
+        &:not(:last-child) {
+            border-bottom: 1px solid $main-theme-blue;
+        }
+    }
+}

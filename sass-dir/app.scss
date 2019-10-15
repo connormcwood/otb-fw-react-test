@@ -1,3 +1,53 @@
-body {
-    background-image: url("/background.png");
+.site-bg-image {
+    background-image: linear-gradient(#00b5ea 1.1%,#5dc4ee 9.5%,#85d2f1 18.5%,#79c5e8 28.7%,#72c3e6 29.1%,#6fc3e5 0,#44b4dc 30.9%,#45b6d6 31.5%,#b6ecec 40.9%,#eaeee8 51.2%,#fafbf8 57.7%,#fdfdfd 80%,#fff);
+    background-repeat: no-repeat;
+    background-size: 100% 100rem;
 }
+
+body {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #313137;
+    font: 1.4em/1.5em BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1em;
+  }
+  
+  main#root {
+    padding: 2em 0;
+  }
+  
+  .row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .flex-fourth {
+    flex-basis: calc(25% - 2%);
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  
+  .flex-three-fourth {
+    flex-basis: calc(75% - 2%);
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  p {
+      margin-block-start: 0;
+      margin-block-end: 0;
+  }

@@ -10,7 +10,7 @@ class Hotel extends Component {
     render() {
         return (
             <div className="hotel">
-
+                <p>Test</p>
             </div>
         )
     }

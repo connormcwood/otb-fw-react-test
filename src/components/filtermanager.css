@@ -1,0 +1,5 @@
+.filters__content {
+  background-color: #FFF;
+  max-width: 240px; }
+  .filters__content .filter:not(:last-child) {
+    border-bottom: 1px solid #00377B; }

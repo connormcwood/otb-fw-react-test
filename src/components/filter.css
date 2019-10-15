@@ -1,2 +1,14 @@
-.test {
-  background-color: blue; }
+.filter {
+  background-color: #FFF;
+  font-size: 0.6em;
+  color: #00377B; }
+  .filter.active, .filter:hover {
+    color: #FFF;
+    background-color: #00377B; }
+  .filter:not(.active):hover {
+    cursor: pointer; }
+  .filter span.bold {
+    font-weight: bold; }
+
+.filter__detail {
+  padding: 0.3em 0.5em; }

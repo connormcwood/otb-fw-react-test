@@ -1,4 +1,35 @@
+@import "./colour";
 
-.test {
-    background-color: blue;
+.filter {
+    background-color: #FFF;
+    font-size: 0.6em;
+    color: $main-theme-blue;
+    &.alphabetically {
+
+    }
+
+    &.price {
+        
+    }
+
+    &.starrating {
+
+    }
+    &.active, &:hover {
+        color: #FFF;
+        background-color: $main-theme-blue;
+    }
+    &:not(.active) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    span.bold {
+        font-weight: bold;
+    }
+}
+
+.filter__detail {
+    padding: 0.3em 0.5em;
 }
