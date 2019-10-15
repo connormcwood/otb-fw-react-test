@@ -11,7 +11,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass --sourcemap=none --update sass-dir:src/components/",
+    "sass-watch": "sass --sourcemap=none --watch sass-dir:src/components/"
   },
   "eslintConfig": {
     "extends": "react-app"
