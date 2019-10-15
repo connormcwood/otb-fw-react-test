@@ -1,6 +1,6 @@
 import React from 'react';
 import FilterManager from './FilterManager';
-import HotelsListing from './HotelsListing'
+import HotelManager from './HotelManager'
 import './app.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
           <FilterManager />
         </div>
         <div className="flex-three-fourth">
-          <HotelsListing />
+          <HotelManager />
         </div>
       </div>
     </div>

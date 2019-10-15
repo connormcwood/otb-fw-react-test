@@ -32,8 +32,12 @@ class FilterManager extends Component {
     }
 
     clickFilter = (value) => {
-        console.log(value)
+        this.setState({
+            activeFilter: value
+        }, () => console.log(this.state))
     }
+
+
 
     render() {
         return (

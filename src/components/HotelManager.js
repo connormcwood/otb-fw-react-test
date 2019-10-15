@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Hotel from './Hotel';
-import "./hotelslisting.css";
+import "./hotelmanager.css";
 
-class HotelsListing extends Component {
+class HotelManager extends Component {
 
     constructor(props) {
         super(props)
@@ -19,4 +19,4 @@ class HotelsListing extends Component {
     }
 }
 
-export default HotelsListing
+export default HotelManager
