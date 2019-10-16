@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 CSS star from [https://css-tricks.com/the-shapes-of-css/](https://css-tricks.com/the-shapes-of-css/)
 Requires SASS for CSS generation.
+Currency Format Regex [https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-currency-string-in-javascript](https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-currency-string-in-javascript)
 
 ## Available Scripts
 

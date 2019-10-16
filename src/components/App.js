@@ -1,20 +1,13 @@
 import React from 'react';
-import FilterManager from './FilterManager';
-import HotelManager from './HotelManager'
+import HotelListings from './HotelListings';
+
 import './app.css';
 
 function App() {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="flex-fourth">
-          <FilterManager />
-        </div>
-        <div className="flex-three-fourth">
-          <HotelManager />
-        </div>
-      </div>
-    </div>
+    <React.Fragment>
+      <HotelListings />
+    </React.Fragment>
   );
 }
 

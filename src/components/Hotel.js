@@ -7,6 +7,7 @@ class Hotel extends Component {
         super(props)
 
         this.state = {
+            id: props.id,
             name: props.name,
             backgroundImage: props.image,
             duration: props.duration,
@@ -14,17 +15,27 @@ class Hotel extends Component {
             departing: props.departing,
             rating: props.rating,
             location: props.location,
-            pax: props.pax
+            pax: props.pax,
+            price: props.price,
+            description: props.description,
+            displayInfo: props.displayInfo
         }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if(this.props !== nextProps) {
+            this.setState(nextProps)
+        }
+        return true
     }
 
     generateRating() {
         let stars = []
         for(let i=0; i < this.state.rating; i++) {
-            stars.push(<div className="star-five"></div>)
+            stars.push(<div key={i} className="star-five"></div>)
         }
         return stars
-    }    
+    }      
 
     pluriseText(text, value, plursiation = null) {
         if(value > 1) {
@@ -36,6 +47,24 @@ class Hotel extends Component {
         }
         text = text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
         return `<span class="bold">${value}</span> ${text}, `
+    }
+
+    // Convert last comma if there are more than two types of passengers
+    convertLastComma(string) {
+        let commas = string.split(',')
+        if(commas.length > 2) {
+            let tempString = ""
+            for(let i = 0; i < commas.length; i++) {
+                tempString += commas[i]
+                if(i === (commas.length - 2)) {
+                    tempString += " &"
+                } else if(i !== (commas.length - 1)) {
+                    tempString += ","
+                }
+            }
+            string = tempString            
+        }
+        return string
     }
 
     convertPaxText(pax) {
@@ -50,22 +79,33 @@ class Hotel extends Component {
             string += this.pluriseText("infant", pax.infant)            
         }
         return {
-            __html: string.substring(0, string.length - 2)
+            __html: this.convertLastComma(string.substring(0, string.length - 2))
         }
     }
 
+    displayReadMoreText() {
+        if(this.state.displayInfo) {
+            return "Read less"
+        }
+        return "Read more"
+    }
+
     render() {
+        let informationClassname = "hotel__information"
+        if(this.state.displayInfo) {
+            informationClassname += " active"
+        }
         return (
             <div className="hotel">
                 <div className="row">
                     <div className="hotel__image" style={{
                         backgroundImage: `url(/${this.state.backgroundImage})`
                     }}>
-                    <div className="readmore">
-                        <div className="content__padding">
-                            <p><span className="bold">Read more</span> about this hotel</p>
+                        <div className="readmore" onClick={() => this.props.onReadmoreClick(this.state.id)}>
+                            <div className="content__padding">
+                                <p><span className="bold">{this.displayReadMoreText() }</span> about this hotel</p>
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <div className="hotel__detail">
                         <div className="content__padding">
@@ -81,9 +121,21 @@ class Hotel extends Component {
                             </div>
                             <div className="button__container">
                                 <a href="#" className="book__button">
-                                    <p className="prebook__text">Book Now</p>
-                                    <p className="book__button__container">£5000</p>
+                                    <div className="prebook__button__container">
+                                        <p className="prebook__text">Book Now</p>
+                                    </div>
+                                    <div className="book__button__container">
+                                        <p className="book__text">£{this.state.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                                    </div>
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={informationClassname}>
+                        <div className="content__padding">
+                            <div className="description__container">
+                                <h5>Overview</h5>
+                                <p>{this.state.description}</p>
                             </div>
                         </div>
                     </div>

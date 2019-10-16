@@ -7,6 +7,20 @@
     flex-basis: 40%;
     display: -webkit-flex;
     display: flex; }
+  .hotel .hotel__information {
+    display: none; }
+    .hotel .hotel__information.active {
+      display: block; }
+    .hotel .hotel__information .content__padding {
+      padding: 1em 15px; }
+  .hotel .description__container h5 {
+    padding: 0;
+    margin: 0 0 0.5em 0;
+    color: #00377B;
+    font-weight: bold; }
+  .hotel .description__container p {
+    font-size: .6em;
+    margin: 0 0 .15em 0; }
   .hotel .content__padding {
     padding: 1em;
     flex: 1;
@@ -20,13 +34,14 @@
     font-size: .9em;
     color: #00377B; }
   .hotel .location {
-    margin: .25em 0;
-    padding: 0;
-    font-size: .6em;
     color: #adadad; }
+  .hotel .location, .hotel .passengers, .hotel .duration, .hotel .departing {
+    margin: .35em 0;
+    padding: 0;
+    font-size: .6em; }
   .hotel .hotel__image {
     flex-basis: 60%;
-    min-height: 300px;
+    min-height: 277px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative; }
@@ -35,10 +50,11 @@
     left: 0;
     bottom: 0;
     font-size: .6em;
-    padding: 0.5em 0;
-    background-color: #FFF; }
+    padding: .6em 0;
+    background-color: #FFF;
+    cursor: pointer; }
     .hotel .readmore .content__padding {
-      padding: 0em 1em; }
+      padding: 0em 30px 0 15px; }
       .hotel .readmore .content__padding p {
         color: #00377B; }
   .hotel .button__container {
@@ -50,15 +66,31 @@
     background-color: #FFD940;
     border-radius: 3px;
     position: relative; }
+    .hotel .book__button:hover {
+      background-color: #ffd427; }
     .hotel .book__button .book__button__container {
       position: absolute;
       display: inline-block;
       left: 50%;
       top: 60%;
       transform: translate(-50%, -50%); }
+      .hotel .book__button .book__button__container .book__text {
+        letter-spacing: 2px;
+        font-size: 1.15em; }
+    .hotel .book__button .prebook__button__container {
+      position: absolute;
+      display: inline-block;
+      left: 50%;
+      top: 35%;
+      transform: translate(-50%, -50%); }
+      .hotel .book__button .prebook__button__container .prebook__text {
+        font-size: .75em; }
+    .hotel .book__button .prebook__text, .hotel .book__button .book__text {
+      color: #00377B;
+      font-weight: bold; }
 
 .rating__container {
-  margin: .25em 0;
+  margin: .5em 0;
   display: -webkit-flex;
   display: flex; }
 

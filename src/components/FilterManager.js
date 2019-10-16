@@ -2,49 +2,53 @@ import React, { Component } from 'react';
 import Filter from './Filter';
 import "./filtermanager.css";
 
-const FILTER_TYPES = {
-    ALPHABETICALLY: { 
+const FILTER_TYPES = [{ 
         ID: 0,
         NAME: "alphabetically",
         PREFIX: ""
     },
-    PRICING: {
+    {
         ID: 1,
         NAME: "price",
         PREFIX: "by"
     },
-    RATING: {
+    {
         ID: 2,
         NAME: "star rating",
         PREFIX: "by"
-    }
-}
+    }]
 
 class FilterManager extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            activeFilter: FILTER_TYPES.ALPHABETICALLY.ID
+            activeFilter: FILTER_TYPES[0].ID,
+            filters: FILTER_TYPES
         }
 
         this.clickFilter = this.clickFilter.bind(this)
     }
 
     clickFilter = (value) => {
-        this.setState({
+        return this.setState({
             activeFilter: value
-        }, () => console.log(this.state))
+        }, () => this.props.modifyMode(value) )
     }
 
+    generateFilters() {
+        let filters = []
+        this.state.filters.map( (item, index) => {
+            return filters.push(<Filter key={index} data={item} activeFilter={this.state.activeFilter} onClick={this.clickFilter} />)
+        })
+        return filters
+    }
 
 
     render() {
         return (
             <div className="filters__content">
-                <Filter data={FILTER_TYPES.ALPHABETICALLY} activeFilter={this.state.activeFilter} onClick={this.clickFilter} />
-                <Filter data={FILTER_TYPES.PRICING} activeFilter={this.state.activeFilter} onClick={this.clickFilter} />
-                <Filter data={FILTER_TYPES.RATING} activeFilter={this.state.activeFilter} onClick={this.clickFilter} />
+                { this.generateFilters() }
             </div>
         )
     }
