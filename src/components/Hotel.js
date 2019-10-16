@@ -95,11 +95,12 @@ class Hotel extends Component {
         if(this.state.displayInfo) {
             informationClassname += " active"
         }
+        const imagePath = require(`../../public/${this.state.backgroundImage}`)
         return (
             <div className="hotel">
                 <div className="row">
                     <div className="hotel__image" style={{
-                        backgroundImage: `url(/${this.state.backgroundImage})`
+                        backgroundImage: `url(${imagePath})`
                     }}>
                         <div className="readmore" onClick={() => this.props.onReadmoreClick(this.state.id)}>
                             <div className="content__padding">

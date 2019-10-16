@@ -8,6 +8,9 @@
 - Media Queries added for sizes less than 992px
 - Due to time spent on this application decided to miss nice to haves such as icons on filter bars and icons on read me.
 
+## Build
+- Build assignment by typing `npm run build` and navigating to the `index.html` file.
+
 ## Dependencies 
 
 - CSS star from [https://css-tricks.com/the-shapes-of-css/](https://css-tricks.com/the-shapes-of-css/)

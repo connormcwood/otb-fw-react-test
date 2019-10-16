@@ -75,7 +75,6 @@ class HotelManager extends Component {
                 modeChanged = (!modeChanged)
             }
             let hotelListings = this.sortListings(nextProps.mode)
-            console.log(`mode: ${nextProps.mode} modeChanged: ${modeChanged}`)
             this.setState({
                 mode: nextProps.mode,
                 modeChanged: modeChanged,
