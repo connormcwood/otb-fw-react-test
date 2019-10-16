@@ -62,20 +62,20 @@ class HotelManager extends Component {
         this.state = {
             hotelListings: HOTEL_LISTINGS,
             mode: null,
-            modeChanged: true
+            modeChanged: false
         }
     }
 
     shouldComponentUpdate(nextProps, nextState) {
         if(this.props !== nextProps) {
             let modeChanged = this.state.modeChanged
-            if(this.state.mode === nextProps.mode) {
+            if(this.state.mode !== nextProps.mode) {
                 modeChanged = false
-            } else {
-                modeChanged = true
+            } else if(this.state.mode === nextProps.mode) {
+                modeChanged = (!modeChanged)
             }
             let hotelListings = this.sortListings(nextProps.mode)
-            console.log(hotelListings)
+            console.log(`mode: ${nextProps.mode} modeChanged: ${modeChanged}`)
             this.setState({
                 mode: nextProps.mode,
                 modeChanged: modeChanged,
@@ -86,15 +86,24 @@ class HotelManager extends Component {
     }
 
     sortByPrice(array) {
-        return array.sort( (a,b) => (a.price > b.price) ? 1 : -1)
+        if(this.state.modeChanged) {
+            return array.sort( (a,b) => (a.price > b.price) ? 1 : -1)
+        }
+        return array.sort( (a,b) => (a.price < b.price) ? 1 : -1)
     }
 
     sortAlphabetically(array) {
-        return array.sort( (a,b) => (a.name > b.name) ? 1 : -1)        
+        if(this.state.modeChanged) {
+            return array.sort( (a,b) => (a.name > b.name) ? 1 : -1) 
+        }
+        return array.sort( (a,b) => (a.name < b.name) ? 1 : -1)        
     }
 
     sortByRating(array) {
-        return array.sort( (a,b) => (a.rating > b.rating) ? 1 : -1)
+        if(this.state.modeChanged) {
+            return array.sort( (a,b) => (a.rating > b.rating) ? 1 : -1)
+        }
+        return array.sort( (a,b) => (a.rating < b.rating) ? 1 : -1)
     }
 
     sortListings(mode) {

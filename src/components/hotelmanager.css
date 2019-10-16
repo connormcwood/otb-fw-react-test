@@ -1,0 +1,12 @@
+@media (max-width: 992px) {
+  main#root > .container > .row {
+    flex-direction: column; }
+    main#root > .container > .row .flex-fourth {
+      flex-basis: calc(100% - 2%); }
+      main#root > .container > .row .flex-fourth .filters__content {
+        max-width: unset;
+        display: flex;
+        display: -webkit-flex; }
+        main#root > .container > .row .flex-fourth .filters__content .filter {
+          flex: 1;
+          border-bottom: 0; } }

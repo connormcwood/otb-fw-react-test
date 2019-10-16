@@ -10,8 +10,7 @@ body {
   flex-direction: column;
   background-color: #ffffff;
   color: #313137;
-  font: 1.4em/1.5em BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  min-height: 100vh; }
+  font: 1.4em/1.5em BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 span.bold {
   font-weight: bold; }
