@@ -6,6 +6,7 @@
 
 ## Additional Notes
 - Media Queries added for sizes less than 992px
+- Due to time spent on this application decided to miss nice to haves such as icons on filter bars and icons on read me.
 
 ## Dependencies 
 
