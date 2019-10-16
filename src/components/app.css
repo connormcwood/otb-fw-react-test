@@ -13,6 +13,9 @@ body {
   font: 1.4em/1.5em BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   min-height: 100vh; }
 
+span.bold {
+  font-weight: bold; }
+
 .container {
   margin: 0 auto;
   max-width: 1200px;

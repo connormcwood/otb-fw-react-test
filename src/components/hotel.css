@@ -1,4 +1,100 @@
-.test {
-  background-color: green; }
+.hotel {
+  background-color: #FFF;
+  font: 1em BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .hotel:not(:last-child) {
+    margin-bottom: 1em; }
+  .hotel .hotel__detail {
+    flex-basis: 40%;
+    display: -webkit-flex;
+    display: flex; }
+  .hotel .content__padding {
+    padding: 1em;
+    flex: 1;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column; }
+  .hotel h4.name {
+    margin: 0 0 .25em 0;
+    padding: 0;
+    font-size: .9em;
+    color: #00377B; }
+  .hotel .location {
+    margin: .25em 0;
+    padding: 0;
+    font-size: .6em;
+    color: #adadad; }
+  .hotel .hotel__image {
+    flex-basis: 60%;
+    min-height: 300px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative; }
+  .hotel .readmore {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: .6em;
+    padding: 0.5em 0;
+    background-color: #FFF; }
+    .hotel .readmore .content__padding {
+      padding: 0em 1em; }
+      .hotel .readmore .content__padding p {
+        color: #00377B; }
+  .hotel .button__container {
+    flex: 1;
+    margin: 0.25em 0 0 0; }
+  .hotel .book__button {
+    display: block;
+    height: 100%;
+    background-color: #FFD940;
+    border-radius: 3px;
+    position: relative; }
+    .hotel .book__button .book__button__container {
+      position: absolute;
+      display: inline-block;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%); }
 
-/*# sourceMappingURL=hotel.css.map */
+.rating__container {
+  margin: .25em 0;
+  display: -webkit-flex;
+  display: flex; }
+
+.star-five {
+  margin: 5px 0;
+  position: relative;
+  display: block;
+  color: #FFD940;
+  width: 0px;
+  height: 0px;
+  border-right: 10px solid transparent;
+  border-bottom: 7px solid #FFD940;
+  border-left: 10px solid transparent;
+  transform: rotate(35deg); }
+  .star-five:before {
+    border-bottom: 8px solid #FFD940;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -5px;
+    left: -6px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg); }
+  .star-five:after {
+    position: absolute;
+    display: block;
+    color: #FFD940;
+    top: 1px;
+    left: -10px;
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid #FFD940;
+    border-left: 10px solid transparent;
+    transform: rotate(-70deg);
+    content: ''; }

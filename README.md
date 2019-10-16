@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dependencies 
+
+CSS star from [https://css-tricks.com/the-shapes-of-css/](https://css-tricks.com/the-shapes-of-css/)
+Requires SASS for CSS generation.
+
 ## Available Scripts
 
 In the project directory, you can run:
